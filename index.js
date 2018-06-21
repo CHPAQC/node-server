@@ -11,7 +11,7 @@ function staticRoot(staticPath, req, res) {
 		pathObj.pathname += 'text.html'
 	}
 	var filePath = path.join(staticPath, pathObj.pathname)
-	fs.redFile(filePath, 'binary', function(err, fileContent) {
+	fs.readFile(filePath, 'binary', function(err, fileContent) {
         if(err) {
 			console.log('404')
 			res.writeHead(404, 'not found')
@@ -23,10 +23,10 @@ function staticRoot(staticPath, req, res) {
 		}
 	})
 }
-console.log(path.join(__dirname, 'sample'))
+console.log(path.join(__dirname))
 var server = http.createServer(function(req, res) {
 	staticRoot(path.join(__dirname, 'sample'), req, res)
 })
 server.listen(8080)
-console.log('ivsit http://localhast:8080')
+console.log('ttttttttt')
 
